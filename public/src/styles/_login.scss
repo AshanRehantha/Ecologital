@@ -1,0 +1,35 @@
+.mrn_wapper{
+    width: 100%;
+}
+.login {
+    padding: 5%;
+}
+.login_header{
+    font-size: 2em;
+    color: blue;
+}
+.login_form_container {
+    width: 70%;
+}
+.login_inputs {
+    margin-bottom: 2em;
+    margin-top: 2em;
+    border-radius: 3px !important;
+    &:focus{
+        outline: none;
+    }
+}
+.form-control {
+    border-radius: 0;
+    &:focus{
+        outline: none !important;
+    }
+
+}
+.login_inputs_password {
+    margin-top: 3em;
+}
+.login_inputs_button {
+    margin-top: 3em;
+    border-radius: 0;
+}

@@ -1,0 +1,133 @@
+.top-nav-bar {
+    width: 100%;
+    height: 80px;
+    padding-left: 7em;
+    background-color: aqua;
+
+    h2{
+        padding-top:20px;
+        font-weight: bold;
+    }
+}
+.left-nav-bar{
+    margin-top: 0;
+    z-index: +1000 !important;
+    background: $primaryColor;
+    bottom: 0;
+    top: 0;
+    overflow-y: hidden;
+}
+
+.collapsed{
+    position: absolute;
+    padding-top: 0;
+    bottom: 0;
+    top: 0;
+    min-width: 4.5em;
+    -webkit-transition: all .4s;
+
+    & .left-nav-top-content{
+        padding-top: 25px !important;
+        padding-bottom: 9px;
+        position: relative;
+        background:#ffffff;
+    }
+
+
+    h2{
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 800;
+    }
+}
+
+.expand {
+    position: absolute;
+    padding-top: 0;
+    bottom: 0;
+    top: 0;
+    min-width: 10em;
+    -webkit-transition: all .4s;
+
+    & .left-nav-top-content{
+        padding-top: 25px !important;
+        padding-bottom: 20px;
+        position: relative;
+        background:#ffffff;
+    }
+
+    h2{
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 800;
+    }
+}
+
+.left-menu-item{
+    padding-left: 0;
+    list-style-type: none;
+    margin-top: 0;
+    overflow: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: auto;
+    //border-bottom: 1px solid #fff;
+
+    &__link{
+        display: flex;
+        padding: 0.2rem;
+        font-size: .9375rem;
+        position: relative;
+        -webkit-transition: all .4s;
+        transition: all .4s;
+        text-decoration: none;
+        padding-left: 1.5rem;
+        line-height: 36px;
+        color:#fff;
+    }
+
+    &__icon{
+        display: inline-block;
+        line-height: 1.0625rem;
+        font-size: 1.1rem;
+        // width: 2.35rem;
+        // padding:0.4rem;
+        text-align: center;
+        width: auto;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        stroke: #fff;
+        outline: #fff;
+        fill: 0;
+        cursor: pointer;
+
+    }
+
+    &__lable {
+        &--show{
+            display: block;
+            padding-left: 0.6rem;
+            line-height: 30px;
+            cursor: pointer;
+            color:#fff;
+           
+        }
+        &--hide{
+            display: none;
+        }
+    }
+
+    &--show{
+        display: block;
+        padding-left: 0.6rem;
+        line-height: 30px;
+        color:#fff;
+        cursor: pointer;
+    }
+    &--hide{
+        display: none;
+    }
+
+}

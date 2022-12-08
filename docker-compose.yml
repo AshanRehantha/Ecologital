@@ -1,0 +1,50 @@
+version: '3.7'
+
+services:
+    # -----------------------------------------------
+    #           Redis
+    # -----------------------------------------------
+  redis:
+    image: mren-redis-web
+    container_name: mren-redis-web
+    build:
+        context: .
+        dockerfile: docker/redis/Dockerfile
+    command: redis-server --requirepass Ticket2020% --appendonly yes
+    restart: always
+    networks:
+        - mren-core-web
+    volumes:
+        - redisdata:/data
+    deploy:
+        replicas: 1
+    ports:
+        - "6384:6379"
+  #----------------------------------
+  #        WebPortal
+  #----------------------------------      
+  web-portal:
+    image: "web-portal"
+    container_name: "web_portal"
+    env_file:
+        - ./config/.env
+    build:
+        context: .
+        dockerfile: docker/web_portal/Dockerfile   
+    ports:
+        - "8080:8080"
+        - "3030:3030"
+    volumes:
+        - ./:/app/
+    networks:
+        - mren-core-web
+    depends_on:
+        - redis
+networks:
+    mren-core-web:
+        driver: bridge
+volumes:
+    redisdata:
+
+
+
